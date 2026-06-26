@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>For Anshi Ji ❤️</title>
+<style>
+body{
+  margin:0;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(45deg,#ff5f9e,#ff8fb1,#ffc1cc);
+  overflow:hidden;
+  font-family:Arial,sans-serif;
+}
+.box{
+  background:rgba(255,255,255,0.2);
+  backdrop-filter:blur(10px);
+  padding:30px;
+  border-radius:20px;
+  text-align:center;
+  color:white;
+  width:320px;
+}
+input{
+  width:90%;
+  padding:12px;
+  border:none;
+  border-radius:10px;
+  margin:15px 0;
+}
+button{
+  padding:12px 20px;
+  border:none;
+  border-radius:10px;
+  background:#ff2e63;
+  color:white;
+  cursor:pointer;
+}
+#message{display:none;}
+.heart{
+  position:absolute;
+  color:white;
+  animation:up 8s linear infinite;
+}
+@keyframes up{
+  from{transform:translateY(100vh);}
+  to{transform:translateY(-100px);}
+}
+</style>
+</head>
+<body>
+
+<div class="box" id="login">
+  <h2>💖 Secret Love Page 💖</h2>
+  <p>Enter Password</p>
+  <input type="password" id="pass" placeholder="Password">
+  <br>
+  <button onclick="openLove()">Open ❤️</button>
+</div>
+
+<div class="box" id="message">
+  <h1>🌹 Anshi Ji 🌹</h1>
+  <h2>❤️ I Love You ❤️</h2>
+  <p>You are special to me and will always be in my heart. 💕</p>
+  <h3>– Yours, Devansh ❤️</h3>
+</div>
+
+<script>
+function openLove(){
+  if(document.getElementById('pass').value==='21.2009'){
+    document.getElementById('login').style.display='none';
+    document.getElementById('message').style.display='block';
+  }else{
+    alert('Wrong Password');
+  }
+}
+setInterval(()=>{
+  let h=document.createElement('div');
+  h.className='heart';
+  h.innerHTML='❤️';
+  h.style.left=Math.random()*100+'vw';
+  h.style.fontSize=(20+Math.random()*20)+'px';
+  document.body.appendChild(h);
+  setTimeout(()=>h.remove(),8000);
+},400);
+</script>
+
+</body>
+</html>
